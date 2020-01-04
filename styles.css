@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  /* line-height: 1.5px; */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: rgb(60, 60, 60);
+  overflow-x: hidden;
+  /* background-image: url("img/backgroundPicture.jpeg"); */
+  background-size: cover;
+}
+
+dt {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 20px 15px;
+}
+
+ul {
+  list-style: none;
+  /*убираем маркеры списка*/
+  margin: 0;
+  /*убираем верхнее и нижнее поле, равное 1em*/
+  padding-left: 0;
+  /*убираем левый отступ, равный 40px*/
+}
+
+li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  /*убираем подчеркивание текста ссылок*/
+}
+
+.history:hover {
+  color: grey;
+}
+.change_components:hover {
+  color: grey;
+}
+.changeVelo {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  /* position: relative; */
+  grid-template-columns: 250px auto 250px;
+  grid-template-rows: 50px auto auto 80px;
+  grid-gap: 10px;
+  grid-template-areas:
+    "header header header"
+    ". nav ."
+    ". content ."
+    "footer footer footer";
+}
+
+.container div {
+  /* border-radius: 15px; */
+  /* padding: 20px; */
+}
+
+/* HEADER */
+header {
+  grid-area: header;
+  display: grid;
+  /* position: absolute; */
+  /* background-color: rgb(105, 105, 105); */
+  background: url('img/header.png');
+  /* justify-content: center; */
+  align-content: center;
+}
+
+header nav {
+  background: none;
+  margin: 20px;
+  margin-left: 250px;
+}
+
+header nav a {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  margin-right: 15px;
+  margin-left: 15px;
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 12px;
+}
+
+header nav a:hover {
+  cursor: pointer;
+  outline: none;
+}
+
+/* NAVIGATION */
+.nav {
+  grid-area: nav;
+  /* background-color: white; */
+  background-image: url("img/history.png");
+  /* background-size: ; */
+  background-position: center;
+  padding: 25px;
+  border-radius: 15px;
+  justify-content: center;
+  align-self: flex-start;
+  text-align: center;
+  color: white;
+  height: 100px;
+}
+
+.nav2 {
+  display: grid;
+  grid-area: nav;
+  background-image: url("img/nav.png");
+  padding: 10px;
+  border-radius: 15px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "frame wheel transmission fork";
+  grid-gap: 20px;
+  /* justify-content: center; */
+  align-self: center;
+  text-align: center;
+  color: white;
+}
+
+.nav2 img {
+  height: 100px;
+  width: auto;
+}
+
+.nav2 p {
+  margin: 5px;
+}
+
+.frame {
+  grid-area: frame;
+}
+
+.frame hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: none;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.frame:hover {
+  background-image: url("img/navButton.png");
+  border-radius: 20px;
+  cursor: default;
+}
+
+.frame:hover hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: white;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.frame:active {
+  background-image: url("img/navButtonActive.png");
+}
+
+.frame:active img {
+  opacity: 0.75;
+}
+
+.frame:active p {
+  opacity: 0.75;
+}
+
+.frame:active hr {
+  opacity: 0.75;
+}
+
+.wheel {
+  grid-area: wheel;
+}
+
+.wheel hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: none;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.wheel:hover {
+  background-image: url("img/navButton.png");
+  border-radius: 20px;
+  cursor: default;
+}
+
+.wheel:hover hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: white;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.wheel:active {
+  background-image: url("img/navButtonActive.png");
+}
+
+.wheel:active img {
+  opacity: 0.75;
+}
+
+.wheel:active p {
+  opacity: 0.75;
+}
+
+.wheel:active hr {
+  opacity: 0.75;
+}
+
+.transmissionContainer {
+  display: grid;
+  grid-template-columns: 50px auto auto 50px;
+  grid-template-rows: auto auto auto auto auto;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas:
+    ". TP TP ."
+    ". TH2 TH2 ."
+    ". Sh piSh ."
+    ". Ce piCe ."
+    ". Pe piPe ."
+}
+.transmissionH2 {
+  grid-area: TH2;
+  font-size: 25px;
+}
+.transmissionPicture {
+  grid-area: TP;
+  text-align: center;
+}
+
+.Sh {
+  grid-area: Sh;
+}
+
+.piSh {
+  grid-area: piSh;
+}
+
+.Ce {
+  grid-area: Ce;
+}
+
+.piCe {
+  grid-area: piCe;
+}
+
+.Pe {
+  grid-area: Pe;
+}
+
+.piPe {
+  grid-area: piPe;
+}
+
+.transmissionPicture img {
+  width: 500px;
+  border-radius: 20px;
+}
+
+.transmission {
+  grid-area: transmission;
+}
+
+.transmission hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: none;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.transmission:hover {
+  background-image: url("img/navButton.png");
+  border-radius: 20px;
+  cursor: default;
+}
+
+.transmission:hover hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: white;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.transmission:active {
+  background-image: url("img/navButtonActive.png");
+}
+
+.transmission:active img {
+  opacity: 0.75;
+}
+
+.transmission:active p {
+  opacity: 0.75;
+}
+
+.transmission:active hr {
+  opacity: 0.75;
+}
+
+.fork {
+  grid-area: fork;
+}
+
+.fork hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: none;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.fork:hover {
+  background-image: url("img/navButton.png");
+  border-radius: 20px;
+  cursor: default;
+}
+
+.fork:hover hr {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  background-color: white;
+  height: 3.5px;
+  border-radius: 15px;
+}
+
+.fork:active {
+  background-image: url("img/navButtonActive.png");
+}
+
+.fork:active img {
+  opacity: 0.75;
+}
+
+.fork:active p {
+  opacity: 0.75;
+}
+
+.fork:active hr {
+  opacity: 0.75;
+}
+.forkPicture {
+  text-align: center;
+}
+.forkPicture img {
+  width: 500px;
+  border-radius: 30px;
+}
+.forkH1 {
+  text-align: center;
+}
+.forkVilka {
+  text-align: center;
+}
+
+.news {
+  grid-area: news;
+  margin-right: 10px;
+  border-radius: 15px;
+  background-image: url("img/nav.png");
+  /* background-color: rgb(199, 0, 74); */
+}
+
+/* CONTENT */
+.content {
+  grid-area: content;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.frameContentPicture {
+  text-align: center;
+}
+
+.frameContentPicture h1 {
+  padding-top: 30px;
+}
+
+.frameContentPicture img {
+  float: left;
+  width: 50%;
+  border-radius: 50px;
+}
+
+.wheelContainer {
+  display: grid;
+  grid-template-columns: 50px auto auto 50px;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-column-gap: 10px;
+  align-items: center;
+  grid-row-gap: 30px;
+  grid-template-areas:
+    ". Vt piVt ."
+    ". Sp piSp ."
+    ". Ka piKa ."
+    ". Po piPo ."
+    ". Ob piOb ."
+    ". Ni piNi .";
+}
+
+.wheelContentPicture {
+  text-align: center;
+}
+
+.wheelContentPicture h1 {
+  padding-top: 30px;
+}
+
+.wheelContentPicture img {
+  float: left;
+  width: 30%;
+  padding-right: 40px;
+  padding-left: 20px;
+  border-radius: 50px;
+}
+
+.wheelPictureTermin {
+  /* text-align: left; */
+}
+
+.wheelPictureTermin img {
+  /* align-content: right; */
+  height: 150px;
+  /* padding-right: 40px;
+  padding-left: 20px; */
+  border-radius: 50px;
+}
+
+.Vt {
+  grid-area: Vt;
+}
+
+.piVt {
+  grid-area: piVt;
+}
+
+.Sp {
+  grid-area: Sp;
+}
+
+.piSp {
+  grid-area: piSp;
+}
+
+.Ka {
+  grid-area: Ka;
+}
+
+.piKa {
+  grid-area: piKa;
+}
+
+.Po {
+  grid-area: Po;
+}
+
+.piPo {
+  grid-area: piPo;
+}
+
+.Ob {
+  grid-area: Ob;
+}
+
+.piOb {
+  grid-area: piOb;
+}
+
+.Ni {
+  grid-area: Ni;
+}
+
+.piNi {
+  grid-area: piNi;
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  /* position: absolute; */
+  /* background: rgb(75, 13, 126); */
+  background-image: url("img/nav.png");
+  border-radius: none;
+  /* grid-row: 3 / 4;
+  grid-column: 1 / 2; */
+}
+#view {
+  margin: 10px;
+}
