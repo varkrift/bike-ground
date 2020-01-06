@@ -1,0 +1,41 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>bike-ground</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div id="app2">
+    <span v-bind:title="message">
+      Наведи курсор на меня на 2 секунды
+    </span>
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello world!'
+      }
+    })
+
+    var app2 = new Vue({
+      el: '#app2',
+      data: {
+        message: 'Вы загрузили эту страницу: ' + new Date().toLocaleString()
+      }
+    })
+  </script>
+
+</body>
+
+</html>
