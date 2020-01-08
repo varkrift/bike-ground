@@ -19,8 +19,23 @@
     </span>
   </div>
 
-  <script>
+  <div id="app3">
+    <span v-if="seen">
+      Меня видно ?
+    </span>
+  </div>
 
+  <div id="app4">
+    <span v-if="seen">
+      <ol>
+        <li v-for="namePunkt in punkts">
+          {{ namePunkt.text }}
+        </li>
+      </ol>
+    </span>
+  </div>
+
+  <script>
     var app = new Vue({
       el: '#app',
       data: {
@@ -32,6 +47,24 @@
       el: '#app2',
       data: {
         message: 'Вы загрузили эту страницу: ' + new Date().toLocaleString()
+      }
+    })
+
+    var app3 = new Vue({
+      el: '#app3',
+      data: {
+        seen: true
+      }
+    })
+
+    var app4 = new Vue({
+      el: '#app4',
+      data: {
+        seen: true,
+        punkts: [
+          { text: "Изучить JS" },
+          { text: "Обучиться игре на гитаре"}
+        ]
       }
     })
   </script>
