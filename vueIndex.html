@@ -67,6 +67,31 @@
         ]
       }
     })
+
+
+    function newUser() {
+      return {
+        isAdmin: false;
+        createUser: function() {
+          this.name = prompt("Your name");
+          this.surname = prompt("Your surname");
+          this.hobby = prompt("Your hobby");
+        },
+      };
+    }
+
+    let maxim = newUser();
+
+    let dasha = Object.create(maxim);
+    alert(dasha.name);
+
+    dasha.f();
+
+    alert(maxim.f);
+    alert(dasha.hobby);
+
+
+
   </script>
 
 </body>
