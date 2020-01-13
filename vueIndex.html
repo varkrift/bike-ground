@@ -61,37 +61,63 @@
       el: '#app4',
       data: {
         seen: true,
-        punkts: [
-          { text: "Изучить JS" },
-          { text: "Обучиться игре на гитаре"}
+        punkts: [{
+            text: "Изучить JS"
+          },
+          {
+            text: "Обучиться игре на гитаре"
+          }
         ]
       }
     })
 
 
-    function newUser() {
-      return {
-        isAdmin: false;
-        createUser: function() {
-          this.name = prompt("Your name");
-          this.surname = prompt("Your surname");
-          this.hobby = prompt("Your hobby");
-        },
-      };
-    }
+    let promiseFirst = new Promise(function(resolve, reject) {
+      setTimeout(() => {
+          let user = {
+            name: "name",
+            surname: "surname",
+            fullName: function(hobby) {
+              alert(hobby);
+              return this.name + this.surname;
+            },
+            isAdmin: false,
+          }
+          resolve(user);
+      }, 3000);
+    });
+    promiseFirst.then(
+      user => {
+        for (let key in user) {
+          alert(key);
+        }
+        let maxim = Object.create(user);
+        maxim.name = "Ma";
+        maxim.surname = "Xim";
+        let fnMaxim = user.fullName.bind(maxim);
+        fnMaxim("Tennis");
+        alert(maxim);
+      },
+      error => alert(error)
+    )
 
-    let maxim = newUser();
 
-    let dasha = Object.create(maxim);
-    alert(dasha.name);
+    let promiseSecond = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        alert("After 3 sec...");
+        resolve("1 step done");
+      }, 3000);
+    });
 
-    dasha.f();
-
-    alert(maxim.f);
-    alert(dasha.hobby);
-
-
-
+    promiseSecond.then(
+      result => {
+        alert(result);
+        setTimeout(() => {
+          alert("After 3 sec after 1 step");
+        }, 3000)
+      },
+      error => alert(error)
+    ).then()
   </script>
 
 </body>
