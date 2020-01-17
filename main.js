@@ -1,3 +1,12 @@
+var header = new Vue({
+  el: '#header',
+data: {
+  nameMain: 'Главная',
+  nameComponents: 'О велосипедных компонентах',
+}
+});
+
+
 let flagNav = true;
 let nav = document.getElementById("nav").innerHTML;
 let nav2 = document.getElementById("nav2").innerHTML;
