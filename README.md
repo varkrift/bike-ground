@@ -1,4 +1,4 @@
 # bike-ground
 This is a training project with great potential for development.
 
-Planned to use Element UI
+![Иллюстрация к проекту](https://github.com/varkrift/bike-ground/blob/master/img/ReadmeIMG/components.png)
